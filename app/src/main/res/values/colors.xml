@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="verde">#00FF00</color>
+    <color name="verde2">#99CC32</color>
+    <color name="blue">#E0FFFF</color>
+    <color name="azulardozia">#007FFF</color>
+    <color name="cinzaclaro">#CDCDCD</color>
+    <color name="verdemusgo">#32CD32</color>
+</resources>

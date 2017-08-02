@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Efficient</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <!--Framgmento de cadastro de disciplina-->
+    <string name="Salvar">Salvar</string>
+    <string name="title_activity_add_disciplina">add_disciplina</string>
+    <string name="salvar">Salvar</string>
+    <string name="Nome">Nome</string>
+    <string name="abreviação">Abreviação</string>
+    <string name="Professor">Professor</string>
+    <string name="Email">Email</string>
+    <string name="Observação">Observação</string>
+    <string name="Obrigatório">Obrigatório</string>
+    <string name="title_activity_cadastrar__disciplina">Cadastrar_Disciplina</string>
+    <string name="title_activity_disc">DiscActivity</string>
+    <string name="camera">Camera</string>
+    <string name="galeria">Galeria</string>
+    <string name="disciplinas">Disciplinas</string>
+    <string name="horarios">Horarios</string>
+    <string name="title_activity_editar__disciplina">Editar_Disciplina</string>
+    <string name="alterar">Alterar</string>
+    <string name="Excluir">Excluir</string>
+    <string name="title_activity_cadastrar__nota">Cadastrar_Nota</string>
+    <string name="texto">Texto</string>
+    <string name="cor">Cor</string>
+    <string name="titulo">Titulo</string>
+    <string name="title_activity_editar__notas">Editar_Notas</string>
+    <string name="Cadastrar_nota">Adicionar nota</string>
+    <string name="Cadastrar_disciplina">Adicionar disciplina</string>
+    <string name="Editar_nota">Editar nota</string>
+    <string name="Editar_disciplina">Editar disciplina</string>
+    <string name="title_activity_cadastrar__horario">Cadastrar_Horario</string>
+    <string name="disciplina">Disciplina</string>
+    <string name="dia">Dia</string>
+    <string name="sala">Sala</string>
+    <string name="inicio">Inicio</string>
+    <string name="fim">Fim</string>
+
+
+</resources>
