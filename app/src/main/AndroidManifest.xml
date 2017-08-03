@@ -22,6 +22,10 @@
         <activity
             android:name=".DisciplinaPackage.add_disciplina"
             android:label="@string/title_activity_add_disciplina"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DisciplinaPackage.DisciplinaActivity"
+            android:label="@string/title_activity_disciplina"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

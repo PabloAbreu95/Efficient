@@ -37,6 +37,7 @@
     <string name="sala">Sala</string>
     <string name="inicio">Inicio</string>
     <string name="fim">Fim</string>
+    <string name="title_activity_disciplina">DisciplinaActivity</string>
 
 
 </resources>

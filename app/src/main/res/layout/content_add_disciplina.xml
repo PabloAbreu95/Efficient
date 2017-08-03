@@ -6,10 +6,13 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.pablo.efficient.DisciplinaPackage.add_disciplina"
-    tools:showIn="@layout/activity_add_disciplina">
+    tools:showIn="@layout/activity_add_disciplina"
+    >
 
 
-
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="368dp"
         android:layout_height="495dp"
@@ -24,10 +27,9 @@
             android:layout_height="wrap_content"
             android:text="@string/Nome"
             android:textSize="18dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="sans-serif-condensed"
-            android:layout_marginBottom="20dp"
-            android:background="#666666"
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             />
 
         <EditText
@@ -37,8 +39,6 @@
             android:ems="10"
             android:layout_marginBottom="20dp"
             android:inputType="textPersonName"
-            android:hint="@string/Obrigatório"
-
             />
 
         <TextView
@@ -46,20 +46,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/abreviação"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
             android:textSize="18dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="sans-serif-condensed"
             android:textStyle="normal"
-            android:background="#6666"
             android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/edt_abreviacao_disciplina"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
             android:ems="10"
+            android:layout_marginBottom="20dp"
             android:inputType="textPersonName"
             android:hint="@string/Obrigatório"
 
@@ -70,9 +68,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Professor"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
             android:textSize="18dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="sans-serif-condensed"
 
             android:textColor="#000000"/>
@@ -92,9 +89,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Email"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
             android:textSize="18dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="sans-serif-condensed"
 
             android:textColor="#000000"/>
@@ -103,14 +99,10 @@
             android:id="@+id/edt_email_disciplina"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:ems="10"
+            android:layout_marginBottom="10dp"
             android:inputType="textPersonName"
-
             />
-
-
-
-
     </LinearLayout>
+</ScrollView>
 </android.support.constraint.ConstraintLayout>

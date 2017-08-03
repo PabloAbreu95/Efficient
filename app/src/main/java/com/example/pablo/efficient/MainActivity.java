@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.pablo.efficient.DisciplinaPackage.DisciplinaActivity;
 import com.example.pablo.efficient.DisciplinaPackage.add_disciplina;
 
 public class MainActivity extends AppCompatActivity
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(MainActivity.this, add_disciplina.class);
+            Intent intent = new Intent(MainActivity.this, DisciplinaActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_share) {
