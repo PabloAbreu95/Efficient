@@ -38,6 +38,7 @@
     <string name="inicio">Inicio</string>
     <string name="fim">Fim</string>
     <string name="title_activity_disciplina">DisciplinaActivity</string>
+    <string name="title_activity_edit_disciplina">edit_disciplina</string>
 
 
 </resources>
