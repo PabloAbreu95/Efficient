@@ -15,8 +15,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.pablo.efficient.DiasSemanaPackage.DiasSemanaActivity;
 import com.example.pablo.efficient.DisciplinaPackage.DisciplinaActivity;
 import com.example.pablo.efficient.DisciplinaPackage.add_disciplina;
+import com.example.pablo.efficient.HorarioPackage.horariosActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -96,9 +98,12 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_share) {
+            Intent intent = new Intent(MainActivity.this, horariosActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_send) {
-
+            Intent intent = new Intent(MainActivity.this, DiasSemanaActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
