@@ -156,6 +156,11 @@ public class add_Horario extends AppCompatActivity {
             Toast.makeText(getBaseContext(), "Horario adicionado", Toast.LENGTH_SHORT).show();
             finish();
 
+            //Cria a pasta onde serão guardadas as fotos da matéria
+            String rootDirectory = Environment.getExternalStorageDirectory().toString();
+            File myDir = new File(rootDirectory + "/" + horario.getNome());
+            myDir.mkdir();
+
         }
         return super.onOptionsItemSelected(item);
     }
