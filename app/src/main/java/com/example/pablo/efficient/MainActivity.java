@@ -14,18 +14,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.pablo.efficient.DiasSemanaPackage.DiasSemanaActivity;
 import com.example.pablo.efficient.DisciplinaPackage.DisciplinaActivity;
 import com.example.pablo.efficient.DisciplinaPackage.add_disciplina;
+import com.example.pablo.efficient.HorarioPackage.horarioBD;
 import com.example.pablo.efficient.HorarioPackage.horariosActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    private horarioBD bd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        bd = new horarioBD(this);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -89,6 +92,8 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+           String horarioatual = bd.getHorarioAtual("Segunda");
+            Toast.makeText(getBaseContext(), horarioatual, Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
