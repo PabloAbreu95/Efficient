@@ -157,9 +157,13 @@ public class add_Horario extends AppCompatActivity {
             finish();
 
             //Cria a pasta onde serão guardadas as fotos da matéria
-            String rootDirectory = Environment.getExternalStorageDirectory().toString();
-            File myDir = new File(rootDirectory + "/" + horario.getNome());
-            myDir.mkdir();
+
+
+            File imageRoot = new File(Environment.getExternalStoragePublicDirectory(
+                    Environment.DIRECTORY_PICTURES), horario.getNome());
+            imageRoot.mkdirs();
+
+
 
         }
         return super.onOptionsItemSelected(item);

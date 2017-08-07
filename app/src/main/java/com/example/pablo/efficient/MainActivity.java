@@ -1,10 +1,20 @@
 package com.example.pablo.efficient;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +24,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.pablo.efficient.DiasSemanaPackage.DiasSemanaActivity;
@@ -22,9 +33,19 @@ import com.example.pablo.efficient.DisciplinaPackage.add_disciplina;
 import com.example.pablo.efficient.HorarioPackage.horarioBD;
 import com.example.pablo.efficient.HorarioPackage.horariosActivity;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private horarioBD bd;
+    private final int TIRAR_FOTO = 3;
+    private final int PERMISSAO_REQUEST = 2;
+    private ImageView imagem;
+    private final int CAMERA = 4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +71,30 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //Permissões para leitura e escrita
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        PERMISSAO_REQUEST);
+            }
+        }
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.READ_EXTERNAL_STORAGE)) {
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                        PERMISSAO_REQUEST);
+            }
+        }
     }
 
     @Override
@@ -92,8 +137,26 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
-           String horarioatual = bd.getHorarioAtual("Segunda");
-            Toast.makeText(getBaseContext(), horarioatual, Toast.LENGTH_SHORT).show();
+           String horarioatual = bd.getHorarioAtual();
+            
+
+            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                try {
+                    arquivoFoto = criarArquivo(horarioatual);
+                } catch (IOException ex) {
+// Manipulação em caso de falha de criação do arquivo
+                }
+                if (arquivoFoto != null) {
+                    Uri photoURI = FileProvider.getUriForFile(getBaseContext(),
+                            getBaseContext().getApplicationContext().getPackageName() +
+                                    ".provider", arquivoFoto);
+                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                    startActivityForResult(takePictureIntent, CAMERA);
+                }
+
+                Toast.makeText(getBaseContext(),"Arquivo será salvo como "+ arquivoFoto.getPath(),Toast.LENGTH_SHORT).show();
+            }
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -114,4 +177,39 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent
+            data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == TIRAR_FOTO && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            imagem.setImageBitmap(imageBitmap);
+        }
+
+        if (requestCode == CAMERA && resultCode == RESULT_OK) {
+            sendBroadcast(new Intent(
+                    Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
+                    Uri.fromFile(arquivoFoto))
+            );
+
+        }
+    }
+
+
+    private File arquivoFoto = null;
+    private File criarArquivo(String nome) throws IOException {
+        String timeStamp = new
+                SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        File pasta = new File(Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_PICTURES), nome);
+        if (!pasta.mkdirs()) {
+            pasta.mkdir();
+        }
+        File imagem = new File(pasta.getPath() + File.separator
+                + nome + timeStamp + ".jpg");
+        return imagem;
+    }
+
+
 }
