@@ -33,8 +33,8 @@ public class add_Horario extends AppCompatActivity {
     private horarioBD bd;
 
     private ArrayList<String> nomes;
-    int horainicial, minutoinicial, horafinal, minutofinal;
-    EditText horainicio, horariofim;
+    int horainicial, minutoinicial;
+    EditText horainicio;
 
 
     @Override
@@ -65,7 +65,7 @@ public class add_Horario extends AppCompatActivity {
 
 
         horainicio = (EditText) findViewById(R.id.edtTextHorarioInicio);
-        horariofim = (EditText) findViewById(R.id.edtTextHorarioFim);
+
 
 
 //Permissões para leitura e escrita
@@ -107,18 +107,7 @@ public class add_Horario extends AppCompatActivity {
     }
 
 
-    public void set_timefim(View view) {
-        final Calendar calendar = Calendar.getInstance();
-        horafinal = calendar.get(calendar.HOUR_OF_DAY);
-        minutofinal = calendar.get(calendar.MINUTE);
-        TimePickerDialog timepickerfim = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                horariofim.setText(String.format("%02d:%02d", hourOfDay, minute));
-            }
-        }, horafinal, minutofinal, true);
-        timepickerfim.show();
-    }
+
 
 
     @Override
@@ -142,7 +131,7 @@ public class add_Horario extends AppCompatActivity {
             Spinner spinnerDiaHorario = (Spinner) findViewById(R.id.spinnerDiaHorario);
             EditText salahorario = (EditText) findViewById(R.id.editTextSalaHorario);
             EditText horainicio = (EditText) findViewById(R.id.edtTextHorarioInicio);
-            EditText horariofim = (EditText) findViewById(R.id.edtTextHorarioFim);
+
 
 
             //Setando valores e adicionando
@@ -151,7 +140,7 @@ public class add_Horario extends AppCompatActivity {
             horario.setDia(spinnerDiaHorario.getSelectedItem().toString());
             horario.setSala(salahorario.getText().toString());
             horario.setInicio(horainicio.getText().toString());
-            horario.setFim(horariofim.getText().toString());
+
             bd.addHorario(horario);
             Toast.makeText(getBaseContext(), "Horario adicionado", Toast.LENGTH_SHORT).show();
             finish();

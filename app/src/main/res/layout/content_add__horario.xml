@@ -68,22 +68,5 @@
             android:inputType="time"
             android:ems="10"/>
 
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/fim"
-            />
-
-        <EditText
-            android:id="@+id/edtTextHorarioFim"
-            android:focusable="false"
-            android:layout_width="70dp"
-            android:onClick="set_timefim"
-            android:minEms="10"
-            android:layout_height="wrap_content"
-            android:inputType="time"
-            android:ems="10"
-            />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
