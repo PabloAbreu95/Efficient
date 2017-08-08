@@ -45,9 +45,7 @@
         <activity
             android:name=".DiasSemanaPackage.DiasSemanaActivity"
             android:label="@string/title_activity_dias_semana"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
-
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -56,9 +54,13 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/providers_path"/>
+                android:resource="@xml/providers_path" />
         </provider>
 
+        <activity
+            android:name=".LembretesPackage.add_Lembrete"
+            android:label="@string/title_activity_add__lembrete"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

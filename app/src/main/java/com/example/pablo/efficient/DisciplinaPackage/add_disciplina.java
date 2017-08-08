@@ -47,14 +47,14 @@ public class add_disciplina extends AppCompatActivity {
             EditText email = (EditText) findViewById(R.id.edt_email_disciplina);
 
 
-            Disciplina disciplina = new Disciplina();
-            disciplina.setNome(nome.getText().toString());
-            disciplina.setAbreviacao(abreviacao.getText().toString());
-            disciplina.setProfessor(professor.getText().toString());
-            disciplina.setEmail(email.getText().toString());
-            bd.addDisciplina(disciplina);
-            Toast.makeText(getBaseContext(), "Disciplina adicinonada", Toast.LENGTH_SHORT).show();
-            finish();
+                Disciplina disciplina = new Disciplina();
+                disciplina.setNome(nome.getText().toString());
+                disciplina.setAbreviacao(abreviacao.getText().toString());
+                disciplina.setProfessor(professor.getText().toString());
+                disciplina.setEmail(email.getText().toString());
+                bd.addDisciplina(disciplina);
+                Toast.makeText(getBaseContext(), "Disciplina adicinonada", Toast.LENGTH_SHORT).show();
+                finish();
         }
 
         return super.onOptionsItemSelected(item);
