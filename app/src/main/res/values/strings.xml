@@ -42,6 +42,8 @@
     <string name="title_activity_horarios">horariosActivity</string>
     <string name="title_activity_add__horario">add_Horario</string>
 
+    <!---Drawer menu-->
+    <string name="notas">Notas</string>
 
     <!---Dias da semana-->
     <string-array name="dias_semana">

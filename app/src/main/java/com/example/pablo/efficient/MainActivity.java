@@ -159,10 +159,11 @@ public class MainActivity extends AppCompatActivity
             }
         } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_slideshow) { //Disciplinas
             Intent intent = new Intent(MainActivity.this, DisciplinaActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_manage) { //Horários
+            Intent intent = new Intent(MainActivity.this, DiasSemanaActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_share) {
@@ -170,8 +171,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_send) {
-            Intent intent = new Intent(MainActivity.this, DiasSemanaActivity.class);
-            startActivity(intent);
+
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
