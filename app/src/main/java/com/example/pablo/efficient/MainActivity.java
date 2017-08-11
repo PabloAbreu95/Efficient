@@ -1,11 +1,9 @@
 package com.example.pablo.efficient;
 
 import android.Manifest;
-import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -29,9 +27,9 @@ import android.widget.Toast;
 
 import com.example.pablo.efficient.DiasSemanaPackage.DiasSemanaActivity;
 import com.example.pablo.efficient.DisciplinaPackage.DisciplinaActivity;
-import com.example.pablo.efficient.DisciplinaPackage.add_disciplina;
 import com.example.pablo.efficient.HorarioPackage.horarioBD;
 import com.example.pablo.efficient.HorarioPackage.horariosActivity;
+import com.example.pablo.efficient.NotaPackage.notasActivity;
 
 import java.io.File;
 import java.io.IOException;
@@ -167,11 +165,13 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_share) {
-            Intent intent = new Intent(MainActivity.this, horariosActivity.class);
+            Intent intent = new Intent(MainActivity.this, notasActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_send) {
 
+        } else if (id == R.id.nav_send) {
+            Intent intent = new Intent(MainActivity.this, horariosActivity.class);
+            startActivity(intent);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

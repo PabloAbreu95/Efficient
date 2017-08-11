@@ -20,7 +20,8 @@ public class notasBD extends SQLiteOpenHelper {
     private static final String TITULO = "titulo";
     private static final String TEXTO = "texto";
     private static final String COR = "cor";
-    private static final String[] COLUNAS = {ID, TITULO, TEXTO, COR};
+    private static final String DATA = "data";
+    private static final String[] COLUNAS = {ID, TITULO, TEXTO, COR, DATA};
 
 
 
@@ -34,7 +35,8 @@ public class notasBD extends SQLiteOpenHelper {
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "titulo TEXT," +
                 "texto TEXT," +
-                "cor TEXT)";
+                "cor TEXT," +
+                "data TEXT)";
         db.execSQL(CREATE_TABLE);
     }
 
@@ -50,6 +52,7 @@ public class notasBD extends SQLiteOpenHelper {
         values.put(TITULO, nota.getTitulo());
         values.put(TEXTO, nota.getTexto());
         values.put(COR, nota.getCor());
+        values.put(DATA, nota.getData());
         db.insert(TABELA_NOTAS, null, values);
         db.close();
     }
@@ -79,6 +82,7 @@ public class notasBD extends SQLiteOpenHelper {
         nota.setTitulo(cursor.getString(1));
         nota.setTexto(cursor.getString(2));
         nota.setCor(cursor.getString(3));
+        nota.setData(cursor.getString(4));
         return nota;
     }
 
@@ -102,6 +106,7 @@ public class notasBD extends SQLiteOpenHelper {
         values.put(TITULO, nota.getTitulo());
         values.put(TEXTO, nota.getTexto());
         values.put(COR, nota.getCor());
+        values.put(DATA, nota.getData());
         int i = db.update(TABELA_NOTAS, //tabela
                 values, // valores
                 ID+" = ?", // colunas para comparar

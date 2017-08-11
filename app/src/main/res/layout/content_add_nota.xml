@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.pablo.efficient.NotaPackage.add_nota"
+    tools:showIn="@layout/activity_add_nota">
+
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="695dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp"
+        android:id="@+id/nota_layout">
+
+
+        <EditText
+            android:id="@+id/editTextnotatitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="@string/titulo"
+            />
+
+        <EditText
+            android:id="@+id/editTextnotatexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/texto"
+            android:inputType="textMultiLine" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

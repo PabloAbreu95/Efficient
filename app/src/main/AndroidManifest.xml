@@ -60,6 +60,14 @@
         <activity
             android:name=".LembretesPackage.add_Lembrete"
             android:label="@string/title_activity_add__lembrete"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NotaPackage.add_nota"
+            android:label="@string/title_activity_add_nota"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NotaPackage.notasActivity"
+            android:label="@string/title_activity_notas"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

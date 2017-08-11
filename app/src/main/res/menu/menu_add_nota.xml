@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:title="Cor"
+        android:id="@+id/cor"
+        app:showAsAction="always"/>
+    <item android:title="@string/Salvar"
+        android:id="@+id/salvar_nota"
+        app:showAsAction="always"/>
+
+
+</menu>

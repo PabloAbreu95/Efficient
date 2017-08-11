@@ -9,6 +9,7 @@ public class Nota {
     private String titulo;
     private String texto;
     private String cor;
+    private String data;
 
     public int getId() {
         return id;
@@ -41,4 +42,13 @@ public class Nota {
     public void setCor(String cor) {
         this.cor = cor;
     }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
 }
