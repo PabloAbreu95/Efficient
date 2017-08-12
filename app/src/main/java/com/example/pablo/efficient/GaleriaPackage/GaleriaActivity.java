@@ -1,6 +1,8 @@
 package com.example.pablo.efficient.GaleriaPackage;
 
+import android.content.Context;
 import android.content.Intent;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -25,6 +27,8 @@ import java.util.ArrayList;
 public class GaleriaActivity extends AppCompatActivity {
     private horarioBD bd;
     private ArrayList<String> listaHorarios;
+    String SCAN_PATH;
+    File[] allFiles ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,20 +51,40 @@ public class GaleriaActivity extends AppCompatActivity {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String nome = listaHorarios.get(position).toString();
-                Toast.makeText(getBaseContext(), nome, Toast.LENGTH_SHORT).show();
-
-
+                Toast.makeText(getBaseContext(), listaHorarios.get(position).toString(), Toast.LENGTH_SHORT).show();
                 File imageRoot = new File(Environment.getExternalStoragePublicDirectory(
-                        Environment.DIRECTORY_PICTURES), nome); //Recria pasta caso não exista
-                imageRoot.mkdir();
+                        Environment.DIRECTORY_PICTURES), listaHorarios.get(position).toString()); //Recria pasta caso não exista
 
-                
-
-
+                allFiles = imageRoot.listFiles();
+                new SingleMediaScanner(GaleriaActivity.this, allFiles[0]);
 
 
             }
         });
     }
-}
+
+        public class SingleMediaScanner implements MediaScannerConnection.MediaScannerConnectionClient {
+
+            private MediaScannerConnection mMs;
+            private File mFile;
+
+            public SingleMediaScanner(Context context, File f) {
+                mFile = f;
+                mMs = new MediaScannerConnection(context, this);
+                mMs.connect();
+            }
+
+            public void onMediaScannerConnected() {
+                mMs.scanFile(mFile.getAbsolutePath(), null);
+            }
+
+            public void onScanCompleted(String path, Uri uri) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(uri);
+                startActivity(intent);
+                mMs.disconnect();
+            }
+
+        }
+    }
+
