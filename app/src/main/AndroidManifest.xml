@@ -68,6 +68,10 @@
         <activity
             android:name=".NotaPackage.notasActivity"
             android:label="@string/title_activity_notas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".GaleriaPackage.GaleriaActivity"
+            android:label="@string/title_activity_galeria"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

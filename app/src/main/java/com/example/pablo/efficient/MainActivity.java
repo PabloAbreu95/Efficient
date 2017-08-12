@@ -27,6 +27,7 @@ import android.widget.Toast;
 
 import com.example.pablo.efficient.DiasSemanaPackage.DiasSemanaActivity;
 import com.example.pablo.efficient.DisciplinaPackage.DisciplinaActivity;
+import com.example.pablo.efficient.GaleriaPackage.GaleriaActivity;
 import com.example.pablo.efficient.HorarioPackage.horarioBD;
 import com.example.pablo.efficient.HorarioPackage.horariosActivity;
 import com.example.pablo.efficient.NotaPackage.notasActivity;
@@ -153,9 +154,12 @@ public class MainActivity extends AppCompatActivity
                     startActivityForResult(takePictureIntent, CAMERA);
                 }
 
-                Toast.makeText(getBaseContext(),"Arquivo será salvo como "+ arquivoFoto.getPath(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(),horarioatual,Toast.LENGTH_SHORT).show();
             }
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_gallery) { //Galeria
+            Intent intent = new Intent(MainActivity.this, GaleriaActivity.class);
+            startActivity(intent);
+
 
         } else if (id == R.id.nav_slideshow) { //Disciplinas
             Intent intent = new Intent(MainActivity.this, DisciplinaActivity.class);
