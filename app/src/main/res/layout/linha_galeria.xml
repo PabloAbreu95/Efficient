@@ -1,12 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        app:srcCompat="@mipmap/ic_gallery_icone" />
+
     <TextView
         android:id="@+id/textViewNomeGaleria"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome"
-        android:textSize="18dp"/>
+        android:textSize="25dp"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/imageView2"
+        android:layout_toRightOf="@+id/imageView2"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+
+        />
+
+
+</RelativeLayout>
+
 </LinearLayout>

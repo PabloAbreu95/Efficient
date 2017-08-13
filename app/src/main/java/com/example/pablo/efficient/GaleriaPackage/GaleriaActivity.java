@@ -51,12 +51,17 @@ public class GaleriaActivity extends AppCompatActivity {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getBaseContext(), listaHorarios.get(position).toString(), Toast.LENGTH_SHORT).show();
                 File imageRoot = new File(Environment.getExternalStoragePublicDirectory(
                         Environment.DIRECTORY_PICTURES), listaHorarios.get(position).toString()); //Recria pasta caso não exista
 
                 allFiles = imageRoot.listFiles();
-                new SingleMediaScanner(GaleriaActivity.this, allFiles[0]);
+                new SingleMediaScanner(GaleriaActivity.this, allFiles[allFiles.length-1]);
+                if(allFiles.length == 0){
+                    Toast.makeText(getBaseContext(), "Sem fotos na galeria", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getBaseContext(), "Deslize pra esquerda para ver fotos antigas", Toast.LENGTH_SHORT).show();
+                }
 
 
             }

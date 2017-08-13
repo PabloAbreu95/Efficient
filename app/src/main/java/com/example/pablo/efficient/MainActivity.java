@@ -145,6 +145,7 @@ public class MainActivity extends AppCompatActivity
                     arquivoFoto = criarArquivo(horarioatual);
                 } catch (IOException ex) {
 // Manipulação em caso de falha de criação do arquivo
+                    Toast.makeText(getBaseContext(), "Erro ao criar arquivo", Toast.LENGTH_SHORT).show();
                 }
                 if (arquivoFoto != null) {
                     Uri photoURI = FileProvider.getUriForFile(getBaseContext(),
