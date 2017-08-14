@@ -1,16 +1,19 @@
 package com.example.pablo.efficient.DiasSemanaPackage;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.pablo.efficient.HorarioPackage.Horario;
 import com.example.pablo.efficient.HorarioPackage.horarioAdapter;
 import com.example.pablo.efficient.HorarioPackage.horarioBD;
+import com.example.pablo.efficient.HorarioPackage.showHorario;
 import com.example.pablo.efficient.R;
 
 import java.util.ArrayList;
@@ -60,6 +63,16 @@ public class SegundaFragment extends Fragment {
         listaHorarios = bd.getAllSegunda();
         horarioAdapter adapter = new horarioAdapter(this.getActivity(), listaHorarios);
         lista.setAdapter(adapter);
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                Intent intent = new Intent(getActivity(), showHorario.class);
+                intent.putExtra("ID", listaHorarios.get(position).getId());
+                startActivity(intent);
+            }
+        });
 
     }
 

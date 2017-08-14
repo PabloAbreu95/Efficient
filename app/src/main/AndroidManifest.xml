@@ -38,11 +38,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".HorarioPackage.horariosActivity"
-            android:label="@string/title_activity_horarios"
+            android:label="@string/Horarios"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".HorarioPackage.add_Horario"
-            android:label="@string/title_activity_add__horario"
+            android:label="@string/Novo_Horario"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DiasSemanaPackage.DiasSemanaActivity"
@@ -74,6 +74,10 @@
         <activity
             android:name=".DisciplinaPackage.showDisciplina"
             android:label="@string/title_activity_show_disciplina"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HorarioPackage.showHorario"
+            android:label="@string/Horario"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

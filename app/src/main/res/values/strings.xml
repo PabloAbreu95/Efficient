@@ -16,6 +16,12 @@
     <string name="editar">Editar</string>
 
 
+    <!--Horario-->
+    <string name="Horarios">Horários</string>
+    <string name="Horario">Horário</string>
+    <string name="Novo_Horario">Novo Horário</string>
+
+
     <string name="Salvar">Salvar</string>
     <string name="title_activity_add_disciplina">add_disciplina</string>
     <string name="salvar">Salvar</string>
@@ -76,6 +82,7 @@
     <string name="title_activity_galeria">GaleriaActivity</string>
     <string name="title_activity_gallery_picture">GalleryPictureActivity</string>
     <string name="title_activity_show_disciplina">showDisciplina</string>
+    <string name="title_activity_show_horario">showHorario</string>
 
 
 </resources>

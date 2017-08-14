@@ -9,19 +9,27 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ListViewCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.pablo.efficient.DisciplinaPackage.disciplinaBD;
 import com.example.pablo.efficient.R;
+
+import org.w3c.dom.Text;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -36,6 +44,9 @@ public class add_Horario extends AppCompatActivity {
     int horainicial, minutoinicial;
     EditText horainicio;
 
+    //Testando
+    ListView listView = null;
+
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -43,6 +54,8 @@ public class add_Horario extends AppCompatActivity {
         setContentView(R.layout.activity_add__horario);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         //Banco De Dados do de Horarios
         bd = new horarioBD(this);
@@ -54,6 +67,9 @@ public class add_Horario extends AppCompatActivity {
         ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, nomes);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(aa);
+
+
+
 
 
         //Spinner Dia
@@ -126,30 +142,45 @@ public class add_Horario extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.salvar_horario) {
+            ArrayList<String> todos_horarios = bd.getAllHoras(); //Lista de todos os horarios
+
 
             Spinner spindisciplina = (Spinner) findViewById(R.id.spinnerDisciplinaHorario);
             Spinner spinnerDiaHorario = (Spinner) findViewById(R.id.spinnerDiaHorario);
             EditText salahorario = (EditText) findViewById(R.id.editTextSalaHorario);
             EditText horainicio = (EditText) findViewById(R.id.edtTextHorarioInicio);
 
+            String textohorainicio =horainicio.getText().toString(); //Pegar a hora inicial pra chequar se está vazio
+
+            if(!todos_horarios.contains(horainicio) && spindisciplina.getSelectedItem() != null && !textohorainicio.matches("")) {
 
 
-            //Setando valores e adicionando
-            Horario horario = new Horario();
-            horario.setNome(spindisciplina.getSelectedItem().toString());
-            horario.setDia(spinnerDiaHorario.getSelectedItem().toString());
-            horario.setSala(salahorario.getText().toString());
-            horario.setInicio(horainicio.getText().toString());
+                //Setando valores e adicionando
+                Horario horario = new Horario();
+                horario.setNome(spindisciplina.getSelectedItem().toString());
+                horario.setDia(spinnerDiaHorario.getSelectedItem().toString());
+                horario.setSala(salahorario.getText().toString());
+                horario.setInicio(horainicio.getText().toString());
 
-            bd.addHorario(horario);
-            Toast.makeText(getBaseContext(), "Horario adicionado", Toast.LENGTH_SHORT).show();
-            finish();
+                bd.addHorario(horario);
+                Toast.makeText(getBaseContext(), "Horario adicionado", Toast.LENGTH_SHORT).show();
+                finish();
 
-            //Cria o diretório onde serão guardadas as fotos da matéria
-            File imageRoot = new File(Environment.getExternalStoragePublicDirectory(
-                    Environment.DIRECTORY_PICTURES), horario.getNome());
-            imageRoot.mkdirs();
+                //Cria o diretório onde serão guardadas as fotos da matéria
+                File imageRoot = new File(Environment.getExternalStoragePublicDirectory(
+                        Environment.DIRECTORY_PICTURES), horario.getNome());
+                imageRoot.mkdirs();
+            }
+            else {
+                Toast.makeText(getBaseContext(), "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+            }
         }
-        return super.onOptionsItemSelected(item);
+
+        if (id == android.R.id.home){
+            finish();
+            return true;
+        }
+            return super.onOptionsItemSelected(item);
+
     }
 }
