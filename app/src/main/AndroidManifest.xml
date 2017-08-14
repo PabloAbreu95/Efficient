@@ -24,13 +24,13 @@
         </activity>
         <activity
             android:name=".DisciplinaPackage.add_disciplina"
-            android:label="@string/nova_disciplina"
-            android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:label="@string/nova_disciplina"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DisciplinaPackage.DisciplinaActivity"
-            android:label="@string/title_activity_disciplina"
+            android:label="@string/disciplinas"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DisciplinaPackage.edit_disciplina"
@@ -71,6 +71,10 @@
             android:name=".GaleriaPackage.GaleriaActivity"
             android:label="@string/title_activity_galeria"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DisciplinaPackage.showDisciplina"
+            android:label="@string/title_activity_show_disciplina"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

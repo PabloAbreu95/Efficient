@@ -94,11 +94,7 @@ public class add_disciplina extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i, Integer[] integers) {
                             view.setBackgroundColor(i);
-                            Toast.makeText(getBaseContext(), ""+i ,Toast.LENGTH_SHORT).show();
                             cor = i;
-                            
-
-
                         }
                     })
                     .setNegativeButton("cancel", new DialogInterface.OnClickListener() {

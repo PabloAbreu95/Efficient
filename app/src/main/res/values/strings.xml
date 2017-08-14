@@ -13,9 +13,7 @@
     <string name="escolha_a_cor">Escolha a cor</string>
     <string name="ok">ok</string>
     <string name="cancelar">cancelar</string>
-
-
-
+    <string name="editar">Editar</string>
 
 
     <string name="Salvar">Salvar</string>
@@ -77,6 +75,7 @@
     <string name="title_activity_add_nota">add_nota</string>
     <string name="title_activity_galeria">GaleriaActivity</string>
     <string name="title_activity_gallery_picture">GalleryPictureActivity</string>
+    <string name="title_activity_show_disciplina">showDisciplina</string>
 
 
 </resources>
