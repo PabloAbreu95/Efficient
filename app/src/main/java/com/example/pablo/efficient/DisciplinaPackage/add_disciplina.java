@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pablo.efficient.R;
@@ -62,9 +63,15 @@ public class add_disciplina extends AppCompatActivity {
             EditText abreviacao = (EditText) findViewById(R.id.edt_abreviacao_disciplina);
             EditText professor = (EditText) findViewById(R.id.edt_professor_disciplina);
             EditText email = (EditText) findViewById(R.id.edt_email_disciplina);
+            TextView textoabv = (TextView)findViewById(R.id.textView4);
 
+            String abtexto = abreviacao.getText().toString();
 
+            if(abtexto.matches("")) {
+                Toast.makeText(getBaseContext(), "Preencha o campo abreviação", Toast.LENGTH_SHORT).show();
 
+            }
+            else {
                 Disciplina disciplina = new Disciplina();
                 disciplina.setNome(nome.getText().toString());
                 disciplina.setAbreviacao(abreviacao.getText().toString());
@@ -74,6 +81,8 @@ public class add_disciplina extends AppCompatActivity {
                 bd.addDisciplina(disciplina);
                 Toast.makeText(getBaseContext(), "Disciplina adicionada", Toast.LENGTH_SHORT).show();
                 finish();
+            }
+
         }
 
         if (id == R.id.cor_disciplina){
