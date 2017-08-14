@@ -3,7 +3,21 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
+
     <!--Framgmento de cadastro de disciplina-->
+    <string name="Nomedadisciplina">Nome da disciplina</string>
+    <string name="opcional">Opcional</string>
+    <string name="Nomedoprofessor">Nome do Professor</string>
+    <string name="EmailDoProfessor">Email do Professor</string>
+    <string name="nova_disciplina">Nova disciplina</string>
+    <string name="escolha_a_cor">Escolha a cor</string>
+    <string name="ok">ok</string>
+    <string name="cancelar">cancelar</string>
+
+
+
+
+
     <string name="Salvar">Salvar</string>
     <string name="title_activity_add_disciplina">add_disciplina</string>
     <string name="salvar">Salvar</string>

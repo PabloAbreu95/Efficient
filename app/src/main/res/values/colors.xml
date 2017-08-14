@@ -9,5 +9,9 @@
     <color name="blue">#E0FFFF</color>
     <color name="azulardozia">#007FFF</color>
     <color name="cinzaclaro">#CDCDCD</color>
+    <color name="cinzaclaro2">#DCDCDC</color>
+    <color name="cinzaclaro3">#ededed</color>
     <color name="verdemusgo">#32CD32</color>
+    <color name="azul_claro">#c4fffd</color>
+    <color name="azul_claro2">#a4d2d6</color>
 </resources>

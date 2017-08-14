@@ -24,8 +24,10 @@
         </activity>
         <activity
             android:name=".DisciplinaPackage.add_disciplina"
-            android:label="@string/title_activity_add_disciplina"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/nova_disciplina"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".DisciplinaPackage.DisciplinaActivity"
             android:label="@string/title_activity_disciplina"
@@ -57,10 +59,6 @@
                 android:resource="@xml/providers_path" />
         </provider>
 
-        <activity
-            android:name=".LembretesPackage.add_Lembrete"
-            android:label="@string/title_activity_add__lembrete"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".NotaPackage.add_nota"
             android:label="@string/title_activity_add_nota"

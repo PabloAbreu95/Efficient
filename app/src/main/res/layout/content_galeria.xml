@@ -17,6 +17,6 @@
         android:divider="#FFCC00"
         android:dividerHeight="1dp"
         android:layout_weight="1"
-        
+
         />
 </android.support.constraint.ConstraintLayout>
