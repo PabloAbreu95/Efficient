@@ -8,7 +8,7 @@ public class Nota {
     private int id;
     private String titulo;
     private String texto;
-    private String cor;
+    private int cor;
     private String data;
 
     public int getId() {
@@ -35,11 +35,11 @@ public class Nota {
         this.texto = texto;
     }
 
-    public String getCor() {
+    public int getCor() {
         return cor;
     }
 
-    public void setCor(String cor) {
+    public void setCor(int cor) {
         this.cor = cor;
     }
 

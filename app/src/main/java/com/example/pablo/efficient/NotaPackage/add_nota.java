@@ -1,9 +1,11 @@
 package com.example.pablo.efficient.NotaPackage;
 
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Layout;
@@ -27,15 +29,18 @@ import java.util.GregorianCalendar;
 
 public class add_nota extends AppCompatActivity {
     private notasBD bd;
-    private String cor;
+    private int cor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_nota);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
         bd = new notasBD(this);
-        cor = "ffffffff";
+        cor = 24249242;
 
 
     }
@@ -74,7 +79,7 @@ public class add_nota extends AppCompatActivity {
                         public void onClick(DialogInterface dialogInterface, int i, Integer[] integers) {
                             layout.setBackgroundColor(i);
                             Toast.makeText(getBaseContext(), Integer.toHexString(i) ,Toast.LENGTH_SHORT).show();
-                            cor = Integer.toHexString(i);
+                            cor = i;
                         }
                     })
                     .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
@@ -96,6 +101,8 @@ public class add_nota extends AppCompatActivity {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             String currentDateandTime = sdf.format(new Date());
 
+
+
             Nota nota = new Nota();
             nota.setTitulo(titulo.getText().toString());
             nota.setTexto(texto.getText().toString());
@@ -104,6 +111,10 @@ public class add_nota extends AppCompatActivity {
 
             bd.addNota(nota);
             Toast.makeText(getBaseContext(),"Nota adicionada",Toast.LENGTH_SHORT).show();
+            finish();
+        }
+
+        if(id == android.R.id.home){
             finish();
         }
 

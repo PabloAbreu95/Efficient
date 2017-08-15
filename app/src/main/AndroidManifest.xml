@@ -61,11 +61,11 @@
 
         <activity
             android:name=".NotaPackage.add_nota"
-            android:label="@string/title_activity_add_nota"
+            android:label="@string/Nova_nota"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".NotaPackage.notasActivity"
-            android:label="@string/title_activity_notas"
+            android:label="@string/notas"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".GaleriaPackage.GaleriaActivity"

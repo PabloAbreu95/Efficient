@@ -22,6 +22,11 @@
     <string name="Novo_Horario">Novo Horário</string>
 
 
+    <!--Nota-->
+    <string name="Nova_nota">Nova nota</string>
+
+
+
     <string name="Salvar">Salvar</string>
     <string name="title_activity_add_disciplina">add_disciplina</string>
     <string name="salvar">Salvar</string>

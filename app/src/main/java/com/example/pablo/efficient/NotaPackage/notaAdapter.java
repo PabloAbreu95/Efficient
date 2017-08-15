@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.pablo.efficient.R;
@@ -33,13 +34,12 @@ public class notaAdapter extends ArrayAdapter{
         View rowView = inflater.inflate(R.layout.linha_nota, parent, false);
         TextView titulo = (TextView) rowView.findViewById(R.id.textViewNotaTitulo);
         TextView texto = (TextView) rowView.findViewById(R.id.textViewNotaTexto);
-        TextView cor  = (TextView) rowView.findViewById(R.id.textViewNotaCor);
+        View cor = (View)rowView.findViewById(R.id.linha_layout_nota_simples);
         TextView data  = (TextView) rowView.findViewById(R.id.textViewNotaData);
-
 
         titulo.setText(elementos.get(position).getTitulo());
         texto.setText(elementos.get(position).getTexto());
-        cor.setText(elementos.get(position).getCor());
+        cor.setBackgroundColor(elementos.get(position).getCor());
         data.setText(elementos.get(position).getData());
         return rowView;
     }

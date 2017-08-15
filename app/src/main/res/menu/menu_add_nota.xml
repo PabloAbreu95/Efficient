@@ -9,6 +9,4 @@
     <item android:title="@string/Salvar"
         android:id="@+id/salvar_nota"
         app:showAsAction="always"/>
-
-
 </menu>

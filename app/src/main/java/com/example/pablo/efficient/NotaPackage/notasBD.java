@@ -35,7 +35,7 @@ public class notasBD extends SQLiteOpenHelper {
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "titulo TEXT," +
                 "texto TEXT," +
-                "cor TEXT," +
+                "cor INTEGER," +
                 "data TEXT)";
         db.execSQL(CREATE_TABLE);
     }
@@ -81,7 +81,7 @@ public class notasBD extends SQLiteOpenHelper {
         nota.setId(Integer.parseInt(cursor.getString(0)));
         nota.setTitulo(cursor.getString(1));
         nota.setTexto(cursor.getString(2));
-        nota.setCor(cursor.getString(3));
+        nota.setCor(Integer.parseInt(cursor.getString(3)));
         nota.setData(cursor.getString(4));
         return nota;
     }
