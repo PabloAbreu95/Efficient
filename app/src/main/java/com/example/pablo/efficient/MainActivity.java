@@ -1,6 +1,7 @@
 package com.example.pablo.efficient;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -30,6 +31,7 @@ import com.example.pablo.efficient.DisciplinaPackage.DisciplinaActivity;
 import com.example.pablo.efficient.GaleriaPackage.GaleriaActivity;
 import com.example.pablo.efficient.HorarioPackage.horarioBD;
 import com.example.pablo.efficient.HorarioPackage.horariosActivity;
+import com.example.pablo.efficient.NotaPackage.add_nota;
 import com.example.pablo.efficient.NotaPackage.notasActivity;
 
 import java.io.File;
@@ -57,8 +59,64 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(MainActivity.this, add_nota.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageView cameramain = (ImageView)findViewById(R.id.camera_main); //Imagem da camera clicada
+        cameramain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String horarioatual = bd.getHorarioAtual();
+
+
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                    try {
+                        arquivoFoto = criarArquivo(horarioatual);
+                    } catch (IOException ex) {
+// Manipulação em caso de falha de criação do arquivo
+                        Toast.makeText(getBaseContext(), "Erro ao criar arquivo", Toast.LENGTH_SHORT).show();
+                    }
+                    if (arquivoFoto != null) {
+                        Uri photoURI = FileProvider.getUriForFile(getBaseContext(),
+                                getBaseContext().getApplicationContext().getPackageName() +
+                                        ".provider", arquivoFoto);
+                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                        startActivityForResult(takePictureIntent, CAMERA);
+                    }
+
+                    Toast.makeText(getBaseContext(),horarioatual,Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        ImageView galeriamain = (ImageView)findViewById(R.id.galeria_main); // Imagem galeria clicada
+        galeriamain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, GaleriaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageView disciplinamain = (ImageView)findViewById(R.id.disciplinas_main); //Imagem disciplina clicada
+        disciplinamain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DisciplinaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageView horariosmain = (ImageView)findViewById(R.id.horario_main);
+        horariosmain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DiasSemanaActivity.class);
+                startActivity(intent);
+
             }
         });
 
@@ -121,9 +179,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+
 
         return super.onOptionsItemSelected(item);
     }
@@ -169,14 +225,13 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, DiasSemanaActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_share) { //Notas
             Intent intent = new Intent(MainActivity.this, notasActivity.class);
             startActivity(intent);
 
 
-        } else if (id == R.id.nav_send) {
-            Intent intent = new Intent(MainActivity.this, horariosActivity.class);
-            startActivity(intent);
+        } else if (id == R.id.nav_send) { //Sobre
+            showDialog();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -214,5 +269,15 @@ public class MainActivity extends AppCompatActivity
         File imagem = new File(pasta.getPath() + File.separator
                 + nome + timeStamp + ".jpg");
         return imagem;
+    }
+
+
+
+    private void showDialog(){
+        final Dialog mydialog = new Dialog(this);
+        mydialog.setTitle("Sobre");
+
+        mydialog.setContentView(R.layout.sobre);
+        mydialog.show();
     }
 }

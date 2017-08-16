@@ -47,6 +47,16 @@ public class notasActivity extends AppCompatActivity {
         listaNota = bd.getAllNotas();
         notaAdapter adapter = new notaAdapter(this, listaNota);
         lista.setAdapter(adapter);
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                Intent intent = new Intent(notasActivity.this, showNota.class);
+                intent.putExtra("ID", listaNota.get(position).getId());
+                startActivity(intent);
+            }
+        });
     }
 
 

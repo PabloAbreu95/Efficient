@@ -30,4 +30,5 @@ dependencies {
     compile 'com.android.support:support-v4:26.+'
     compile 'com.github.QuadFlask:colorpicker:0.0.12'
     testCompile 'junit:junit:4.12'
+
 }

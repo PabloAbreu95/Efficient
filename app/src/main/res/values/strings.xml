@@ -24,7 +24,11 @@
 
     <!--Nota-->
     <string name="Nova_nota">Nova nota</string>
+    <string name="Nota">Nota</string>
 
+
+    <!--Galeria-->
+    <string name="Galeria">Galeria</string>
 
 
     <string name="Salvar">Salvar</string>
@@ -88,6 +92,7 @@
     <string name="title_activity_gallery_picture">GalleryPictureActivity</string>
     <string name="title_activity_show_disciplina">showDisciplina</string>
     <string name="title_activity_show_horario">showHorario</string>
+    <string name="title_activity_show_nota">showNota</string>
 
 
 </resources>
