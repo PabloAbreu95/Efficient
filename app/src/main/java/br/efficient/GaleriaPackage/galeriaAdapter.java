@@ -1,4 +1,4 @@
-package com.example.pablo.efficient.GaleriaPackage;
+package br.efficient.GaleriaPackage;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,8 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.pablo.efficient.HorarioPackage.Horario;
-import com.example.pablo.efficient.R;
+import br.efficient.R;
 
 import java.util.ArrayList;
 

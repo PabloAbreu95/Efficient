@@ -1,35 +1,26 @@
-package com.example.pablo.efficient.HorarioPackage;
+package br.efficient.HorarioPackage;
 
 import android.Manifest;
 import android.app.TimePickerDialog;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.ListViewCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.example.pablo.efficient.DisciplinaPackage.disciplinaBD;
-import com.example.pablo.efficient.R;
-
-import org.w3c.dom.Text;
+import br.efficient.DisciplinaPackage.DisciplinaPackage.disciplinaBD;
+import br.efficient.R;
 
 import java.io.File;
 import java.util.ArrayList;

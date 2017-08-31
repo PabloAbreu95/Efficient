@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pablo.efficient">
+    package="br.efficient">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="br.efficient.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
@@ -25,31 +25,31 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DisciplinaPackage.add_disciplina"
+            android:name="br.efficient.DisciplinaPackage.DisciplinaPackage.add_disciplina"
             android:configChanges="orientation"
             android:label="@string/nova_disciplina"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".DisciplinaPackage.DisciplinaActivity"
+            android:name="br.efficient.DisciplinaPackage.DisciplinaPackage.DisciplinaActivity"
             android:label="@string/disciplinas"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".DisciplinaPackage.edit_disciplina"
+            android:name="br.efficient.DisciplinaPackage.DisciplinaPackage.edit_disciplina"
             android:label="@string/title_activity_edit_disciplina"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".HorarioPackage.horariosActivity"
+            android:name="br.efficient.HorarioPackage.horariosActivity"
             android:label="@string/Horarios"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".HorarioPackage.add_Horario"
+            android:name="br.efficient.HorarioPackage.add_Horario"
             android:label="@string/Novo_Horario"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".DiasSemanaPackage.DiasSemanaActivity"
+            android:name="br.efficient.DiasSemanaPackage.DiasSemanaPackage.DiasSemanaActivity"
             android:label="@string/title_activity_dias_semana"
             android:theme="@style/AppTheme.NoActionBar" />
 
@@ -64,33 +64,33 @@
         </provider>
 
         <activity
-            android:name=".NotaPackage.add_nota"
+            android:name="br.efficient.NotaPackage.add_nota"
             android:label="@string/Nova_nota"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".NotaPackage.notasActivity"
+            android:name="br.efficient.NotaPackage.notasActivity"
             android:label="@string/notas"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GaleriaPackage.GaleriaActivity"
+            android:name="br.efficient.GaleriaPackage.GaleriaActivity"
             android:label="@string/Galeria"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".DisciplinaPackage.showDisciplina"
+            android:name="br.efficient.DisciplinaPackage.DisciplinaPackage.showDisciplina"
             android:label="@string/disciplina"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".HorarioPackage.showHorario"
+            android:name="br.efficient.HorarioPackage.showHorario"
             android:label="@string/Horario"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".NotaPackage.showNota"
+            android:name="br.efficient.NotaPackage.showNota"
             android:label="@string/Nota"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

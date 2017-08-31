@@ -1,4 +1,4 @@
-package com.example.pablo.efficient.DiasSemanaPackage;
+package br.efficient.DiasSemanaPackage.DiasSemanaPackage;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,11 +10,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.pablo.efficient.HorarioPackage.Horario;
-import com.example.pablo.efficient.HorarioPackage.horarioAdapter;
-import com.example.pablo.efficient.HorarioPackage.horarioBD;
-import com.example.pablo.efficient.HorarioPackage.showHorario;
-import com.example.pablo.efficient.R;
+import br.efficient.HorarioPackage.Horario;
+import br.efficient.HorarioPackage.horarioAdapter;
+import br.efficient.HorarioPackage.horarioBD;
+import br.efficient.HorarioPackage.showHorario;
+import br.efficient.R;
 
 import java.util.ArrayList;
 
@@ -22,16 +22,19 @@ import java.util.ArrayList;
  * Created by Pablo on 03/08/2017.
  */
 
-public class SabadoFragment extends Fragment {
-    //Dividir horario
+public class SegundaFragment extends Fragment {
+    //Variaveis para dividir horarios
     private horarioBD bd;
     private ArrayList<Horario> listaHorarios;
 
 
-    private static final String TAB = "SabadoFragment";
 
 
-    public SabadoFragment() {
+
+    private static final String TAB = "SegundaFragment";
+
+
+    public SegundaFragment() {
         // Required empty public constructor
     }
 
@@ -40,7 +43,10 @@ public class SabadoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.tab_sabado, container, false);
+        return inflater.inflate(R.layout.tab_segunda, container, false);
+
+
+
     }
 
     @Override
@@ -52,9 +58,9 @@ public class SabadoFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        //Separador pra terca
-        ListView lista = (ListView) getView().findViewById(R.id.lvsabado);
-        listaHorarios = bd.getAllSabado();
+        //Separador pra segunda
+        ListView lista = (ListView) getView().findViewById(R.id.lvsegunda);
+        listaHorarios = bd.getAllSegunda();
         horarioAdapter adapter = new horarioAdapter(this.getActivity(), listaHorarios);
         lista.setAdapter(adapter);
 
@@ -67,6 +73,7 @@ public class SabadoFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
     }
 
 }

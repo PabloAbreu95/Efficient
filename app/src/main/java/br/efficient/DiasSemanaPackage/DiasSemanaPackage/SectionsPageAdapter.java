@@ -1,4 +1,4 @@
-package com.example.pablo.efficient.DiasSemanaPackage;
+package br.efficient.DiasSemanaPackage.DiasSemanaPackage;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

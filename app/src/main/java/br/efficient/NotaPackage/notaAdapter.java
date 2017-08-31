@@ -1,14 +1,13 @@
-package com.example.pablo.efficient.NotaPackage;
+package br.efficient.NotaPackage;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.pablo.efficient.R;
+import br.efficient.R;
 
 import java.util.ArrayList;
 

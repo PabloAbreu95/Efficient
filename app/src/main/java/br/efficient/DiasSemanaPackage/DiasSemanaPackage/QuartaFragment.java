@@ -1,4 +1,4 @@
-package com.example.pablo.efficient.DiasSemanaPackage;
+package br.efficient.DiasSemanaPackage.DiasSemanaPackage;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,11 +10,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.pablo.efficient.HorarioPackage.Horario;
-import com.example.pablo.efficient.HorarioPackage.horarioAdapter;
-import com.example.pablo.efficient.HorarioPackage.horarioBD;
-import com.example.pablo.efficient.HorarioPackage.showHorario;
-import com.example.pablo.efficient.R;
+import br.efficient.HorarioPackage.Horario;
+import br.efficient.HorarioPackage.horarioAdapter;
+import br.efficient.HorarioPackage.horarioBD;
+import br.efficient.HorarioPackage.showHorario;
+import br.efficient.R;
 
 import java.util.ArrayList;
 
@@ -22,16 +22,16 @@ import java.util.ArrayList;
  * Created by Pablo on 03/08/2017.
  */
 
-public class TercaFragment extends Fragment {
+public class QuartaFragment extends Fragment {
     //Dividir horario
     private horarioBD bd;
     private ArrayList<Horario> listaHorarios;
 
 
-    private static final String TAB = "TercaFragment";
+    private static final String TAB = "QuartaFragment";
 
 
-    public TercaFragment() {
+    public QuartaFragment() {
         // Required empty public constructor
     }
 
@@ -40,7 +40,7 @@ public class TercaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.tab_terca, container, false);
+        return inflater.inflate(R.layout.tab_quarta, container, false);
     }
 
     @Override
@@ -52,9 +52,9 @@ public class TercaFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        //Separador pra terca
-        ListView lista = (ListView) getView().findViewById(R.id.lvterca);
-        listaHorarios = bd.getAllTerca();
+        //Separador pra quarta
+        ListView lista = (ListView) getView().findViewById(R.id.lvquarta);
+        listaHorarios = bd.getAllQuarta();
         horarioAdapter adapter = new horarioAdapter(this.getActivity(), listaHorarios);
         lista.setAdapter(adapter);
 
@@ -68,7 +68,8 @@ public class TercaFragment extends Fragment {
             }
         });
 
+
+
     }
 
 }
-

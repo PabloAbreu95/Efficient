@@ -1,4 +1,4 @@
-package com.example.pablo.efficient;
+package br.efficient;
 
 import android.Manifest;
 import android.app.Dialog;
@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
@@ -26,18 +25,20 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.pablo.efficient.DiasSemanaPackage.DiasSemanaActivity;
-import com.example.pablo.efficient.DisciplinaPackage.DisciplinaActivity;
-import com.example.pablo.efficient.GaleriaPackage.GaleriaActivity;
-import com.example.pablo.efficient.HorarioPackage.horarioBD;
-import com.example.pablo.efficient.HorarioPackage.horariosActivity;
-import com.example.pablo.efficient.NotaPackage.add_nota;
-import com.example.pablo.efficient.NotaPackage.notasActivity;
+import br.efficient.DiasSemanaPackage.DiasSemanaPackage.DiasSemanaActivity;
+import br.efficient.DisciplinaPackage.DisciplinaPackage.DisciplinaActivity;
+import br.efficient.GaleriaPackage.GaleriaActivity;
+import br.efficient.HorarioPackage.horarioBD;
+import br.efficient.NotaPackage.add_nota;
+import br.efficient.NotaPackage.notasActivity;
+import br.efficient.R;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -131,13 +132,13 @@ public class MainActivity extends AppCompatActivity
 
         //Permissões para leitura e escrita
         if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                    WRITE_EXTERNAL_STORAGE)) {
             } else {
                 ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        new String[]{WRITE_EXTERNAL_STORAGE},
                         PERMISSAO_REQUEST);
             }
         }
@@ -152,6 +153,8 @@ public class MainActivity extends AppCompatActivity
                         PERMISSAO_REQUEST);
             }
         }
+
+
     }
 
     @Override
@@ -191,6 +194,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
+
             // Handle the camera action
            String horarioatual = bd.getHorarioAtual();
 

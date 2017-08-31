@@ -1,4 +1,4 @@
-package com.example.pablo.efficient.NotaPackage;
+package br.efficient.NotaPackage;
 
 /**
  * Created by Pablo on 08/08/2017.

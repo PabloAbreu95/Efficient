@@ -1,18 +1,15 @@
-package com.example.pablo.efficient.DiasSemanaPackage;
+package br.efficient.DiasSemanaPackage.DiasSemanaPackage;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.example.pablo.efficient.DisciplinaPackage.add_disciplina;
-import com.example.pablo.efficient.HorarioPackage.add_Horario;
-import com.example.pablo.efficient.R;
+import br.efficient.HorarioPackage.add_Horario;
+import br.efficient.R;
 
 public class DiasSemanaActivity extends AppCompatActivity {
     private static final String TAB = "FragmentActivity";
